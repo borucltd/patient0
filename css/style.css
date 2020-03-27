@@ -1,0 +1,27 @@
+body {
+    color: #130f40;
+    background: #f0f0f0;
+}
+
+.outer-nav {
+    margin-bottom: 20px;
+}
+
+h1{
+    font-family: 'Roboto';
+    margin: 0;
+}
+
+.background-img {
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("../img/space-background.jpg");
+}
+
+img {
+    max-height: 500px;
+}
+
+.reduce-div-width {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
