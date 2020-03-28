@@ -6,7 +6,7 @@ var date = randomDate();
 var queryURL = "https://api.nasa.gov/planetary/apod?date=" + date + "&api_key=" + api_key;
 
 // Slack webhook start channel nbmc_slacks
-var url = "https://hooks.slack.com/services/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";
+var url = "https://hooks.slack.com/services/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";
 // Slack webhook end
 
 //Function to return a random date in the correct format starting from the year 2000.
