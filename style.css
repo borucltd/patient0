@@ -61,6 +61,20 @@ body {
   margin: 12px 0;
 }
 
+.header {
+  background-color: #FF2178;
+  color: linen;
+  font-family: sans-serif;
+  width: 100%;
+  padding: 20px;
+  position: fixed;
+  font-size: 22px;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 998;
+}
 
 section {
   position: relative;
