@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
+    <title>Space Tweet Generator</title>
     <!----------------- Foundation Declaration starts here ------------------->
     <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation-float.min.css" integrity="sha256-TPcVVrzfTETpAWQ8HhBHIMT7+DbszMr5n3eFi+UwIl8= sha384-+aXh7XSzITwlvjelsNWuL1A9rT8pWGaiqMMeUjtKcsWIfzT1oV8Mp3oYxmjPK8Gv sha512-cArttU/Yh+PzfQ/dhCdfBiU9+su+fuCwFxLrlLbvuJE/ynUbstaKweVPs7Hdbok9jlv9cwt+xdk20wRz7oYErQ==" crossorigin="anonymous">
@@ -21,7 +21,7 @@
 <body>
   <div class="outer-nav">
     <div class="top-bar align-center background-img"> 
-      <h1>Photo Generator</h1>
+      <h1>Space Tweet Generator</h1>
     </div>
   </div>
  
@@ -36,8 +36,32 @@
             </div>
           </div>
           <div class="cell small-6">
-            test
+            <div class="grid-x">
+              <div class="cell">
+                <a class="button expanded" href="#">Generate Random Photo</a>
+              </div>
+              <div class="cell">
+                <label>Add Text to the image
+                  <input type="text" placeholder="Text">
+                </label>
+              </div>
+              <!------ Checkboxes starts here -------->
+              <div class="grid-x grid-padding-x">
+                <fieldset class="cell">
+                  <legend>Style the image</legend>
+                  <input type="radio" name="pokemon" value="Red" id="pokemonRed" required><label for="pokemonRed">Default</label>
+                  <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Greyscale</label>
+                  <input type="radio" name="pokemon" value="Yellow" id="pokemonYellow"><label for="pokemonYellow">Monochromatic</label>
+                  <input type="radio" name="pokemon" value="Yellow" id="pokemonYellow"><label for="pokemonYellow">Fading</label>
+                </fieldset>
+              </div>
+              <!------ Checkboxes ends here -------->
+              <div class="cell">
+                <a class="button expanded" href="#">Tweet it</a>
+              </div>
+            </div>
           </div>
+
         </div>
         <i class="fa fa-cogs" aria-hidden="true"></i>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quos minima ipsam porro modi corporis necessitatibus aperiam, libero alias illum pariatur provident, dignissimos assumenda consectetur quod ullam. Cumque, corrupti eaque!</p>
@@ -51,6 +75,6 @@
   
     
 
-<script src="./js/app.js"></script>
+
 </body>
 </html>
