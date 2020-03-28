@@ -1,7 +1,13 @@
 
+$(document).ready(function () {
+
 var api_key = "2Xe0Yym5p1wnVlIvGnsLtH8aU4gfdgp12b1d75nR";
 var date = randomDate();
 var queryURL = "https://api.nasa.gov/planetary/apod?date=" + date + "&api_key=" + api_key;
+
+// Slack webhook start channel nbmc_slacks
+var url = "https://hooks.slack.com/services/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";
+// Slack webhook end
 
 //Function to return a random date in the correct format starting from the year 2000.
 function randomDate(){
@@ -38,4 +44,17 @@ $.ajax({
 
     });
 
+// Slack webhook send to channel nbmc_slacks start
+var messageSlack = "Someone opened our page on " + date;
+$.ajax({
+    data: 'payload=' + JSON.stringify({
+        "text": messageSlack
+    }),
+    dataType: 'json',
+    processData: false,
+    type: 'POST',
+    url: url
+});
+// Slack webhook send to channel nbmc_slacks end
 
+});
