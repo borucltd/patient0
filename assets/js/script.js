@@ -44,17 +44,5 @@ $.ajax({
 
     });
 
-// Slack webhook send to channel nbmc_slacks start
-var messageSlack = "Someone opened our page on " + date;
-$.ajax({
-    data: 'payload=' + JSON.stringify({
-        "text": messageSlack
-    }),
-    dataType: 'json',
-    processData: false,
-    type: 'POST',
-    url: url
-});
-// Slack webhook send to channel nbmc_slacks end
 
 });
