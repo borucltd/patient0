@@ -1,6 +1,8 @@
 body {
     color: linen;
     background: #1F1C72;
+    overflow-x: hidden;
+    min-height: 101vh;
 }
 
 .outer-nav {
@@ -98,10 +100,10 @@ img {
     font-family: sans-serif;
     width: 100%;
     padding: 16px;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
     text-align: center;
     z-index: 2;
 }
