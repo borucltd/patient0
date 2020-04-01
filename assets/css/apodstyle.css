@@ -80,16 +80,16 @@ img {
     max-width: 200px;
 }
 
+#generated-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 .reduce-div-width {
     display: flex;
     justify-content: center;
     width: 70%;
-}
-
-@media screen and (min-width: 40em) {
-    #generated-image {
-        margin-right: 1rem;
-    }
 }
 
 .footer {
