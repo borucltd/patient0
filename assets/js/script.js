@@ -1,4 +1,11 @@
 $(document).ready(function () {
+  
+//cursor change while ajax is being called
+$(document).ajaxStart(function() {
+    $(document.body).css({'cursor' : 'wait'});
+}).ajaxStop(function() {
+    $(document.body).css({'cursor' : 'default'});
+}
 
     var api_key = "2Xe0Yym5p1wnVlIvGnsLtH8aU4gfdgp12b1d75nR";
 
@@ -13,6 +20,8 @@ $(document).ready(function () {
         return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 
     }
+
+
 
 
     //ajax call to retrieve URL for pic of the day. temporarily using var picture
@@ -30,7 +39,6 @@ $(document).ready(function () {
 
             });
     }
-
 
     function newURL() {
         var date = moment(randomDate(new Date(2012, 0, 1), new Date())).format("YYYY-MM-DD");
