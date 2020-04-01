@@ -3,7 +3,6 @@
 <!-- You have an image (wave.png) and you set a start position, and a end position. You then select the seconds it will take for the animation to complete -->
 <!-- The process was similar for the "Glitch Effect" text on the webpage. Again following a YouTube tutorial; https://www.youtube.com/watch?v=HpOi_tSMAoY-->
 
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -18,21 +17,26 @@
     NBMC // NASA API
   </div>
   <div class="login-box">
-    <h1>Login</h1>
+    <h1 id="login">Login</h1>
     <div class="textbox">
       <i class="fas fa-user"></i>
-      <input type="text" placeholder="First Name">
+      <input type="text" placeholder="First Name" id="username">
     </div>
 
     <div class="textbox">
       <i class="fas fa-lock"></i>
       <input type="password" placeholder="Password">
     </div>
-    <a href='apod.html'><input type="button" class="btn" value="Sign in"></a>
+    <a href='apod.html'><input type="button" class="btn" value="Sign in" id="signin"></a>
   </div>
   <section>
     <div class="wave"></div>
   </section>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous">  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./assets/js/script_local_storage.js"></script>
 
 </body>
 

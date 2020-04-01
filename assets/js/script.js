@@ -2,13 +2,13 @@ $(document).ready(function () {
   
 //cursor change while ajax is being called
 $(document).ajaxStart(function() {
-    $(document.body).css({'cursor' : 'wait'});
+    $('body').addClass('wait'); 
 }).ajaxStop(function() {
-    $(document.body).css({'cursor' : 'default'});
+    $('body').removeClass('wait'); 
 });
 
+// NASA API
     var api_key = "2Xe0Yym5p1wnVlIvGnsLtH8aU4gfdgp12b1d75nR";
-
 
     //Use Moment.js to get the correct formatting for the ajax query.
 
@@ -21,12 +21,10 @@ $(document).ajaxStart(function() {
 
     }
 
-
-
-
     //ajax call to retrieve URL for pic of the day. temporarily using var picture
 
     function generateImage() {
+        
         $.ajax({
                 url: newURL(),
                 method: "GET"
@@ -45,4 +43,5 @@ $(document).ajaxStart(function() {
         var queryURL = "https://api.nasa.gov/planetary/apod?date=" + date + "&api_key=" + api_key;
         return queryURL
     }
+
 });

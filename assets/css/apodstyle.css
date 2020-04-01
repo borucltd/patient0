@@ -3,6 +3,13 @@ body {
     background: #1F1C72;
 }
 
+/* class is needed to render busy cursos during ajax calls */
+body.wait *, body.wait
+{
+    /* important to overwrite any other potential cursos manipulations*/
+    cursor: wait !important;
+}
+
 .outer-nav {
     margin-bottom: 20px;
 }
@@ -105,3 +112,4 @@ img {
     text-align: center;
     z-index: 2;
 }
+
