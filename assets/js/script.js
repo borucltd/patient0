@@ -5,7 +5,7 @@ $(document).ajaxStart(function() {
     $(document.body).css({'cursor' : 'wait'});
 }).ajaxStop(function() {
     $(document.body).css({'cursor' : 'default'});
-}
+});
 
     var api_key = "2Xe0Yym5p1wnVlIvGnsLtH8aU4gfdgp12b1d75nR";
 
