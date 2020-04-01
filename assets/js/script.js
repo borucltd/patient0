@@ -15,9 +15,15 @@ function randomDate(start,end){
 
 }
 
+//cursor change while ajax is being called
+$(document).ajaxStart(function() {
+    $(document.body).css({'cursor' : 'wait'});
+}).ajaxStop(function() {
+    $(document.body).css({'cursor' : 'default'});
+});
+
 
 //ajax call to retrieve URL for pic of the day. temporarily using var picture
-
 function generateImage() {
     $.ajax({
         url:    newURL(),
