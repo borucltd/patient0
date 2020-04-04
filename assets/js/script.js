@@ -98,10 +98,11 @@ $(document).ajaxStart(function() {
 
         c = $('canvas')[0];
         var ctx = c.getContext("2d");
-        ctx.fillRect(0, 0, document.getElementById("generated-image").width, document.getElementById("generated-image").height);
+        //ctx.fillRect(0, 0, document.getElementById("generated-image").width, document.getElementById("generated-image").height);
         var img1 = new Image ();
         img1.src = document.getElementById("generated-image").src;
-        ctx.textBaseline = "top";
+        img1.onload = function() {
+            ctx.textBaseline = "top";
         ctx.drawImage(img1, 0, 0);
         lengthOfText = (ctx.measureText(textVal)).width;
         lengthOfCanvas = (ctx.canvas.width);
@@ -123,6 +124,8 @@ $(document).ajaxStart(function() {
         }
         ctx.fillText(line, ctx.canvas.width/2, ctx.canvas.height/heightRatio);
         ctx.textAlign = "center";
+        
+        }
         
     }
 
