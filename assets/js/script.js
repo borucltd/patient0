@@ -44,12 +44,21 @@ $(document).ajaxStart(function() {
                 method: "GET"
             })
             .then(function (response) {
-                picture = $("#generated-image");
-                var result = response.url;
-                picture.attr("src", result);
-                imgToCanvas();
-                
 
+                var result = response.url; 
+                console.log(result);
+    //Validate the result as a Nasa picture .jpg or not. If it's a gif/vimeo/youtube link then re-run query
+
+                if (result.includes("apod.nasa.gov/apod/image") && result.includes("jpg") == true){
+                    picture = $("#generated-image");                
+                    picture.attr("src", result);
+                    imgToCanvas();              
+                }
+
+                else {
+                    console.log("This is not an image");
+                    generateImage()
+                }            
             });  
     }
 
