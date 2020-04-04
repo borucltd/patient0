@@ -38,11 +38,12 @@
                     <div class="grid-x">
                         <div class="cell small-12 medium-12">
                             <div class="cell">
-                                <a class="button expanded" href="#" id="button-generate"><b>Generate Random
+                                <a class="button expanded" id="button-generate"><b>Generate Random
                                         Photo</b></a>
                             </div>
-                            <div class="align-center media-object">
+                            <div class="align-center media-object" id="canvas-manipulation">
                                 <img id="generated-image" src="./assets/img/Space-example.jpg" alt="space photo">
+                                <span></span>
                             </div>
                         </div>
                         <div class="cell small-12 medium-12">
@@ -50,7 +51,7 @@
                                 
                                 <div class="cell">
                                     <label><b>Add Text to the image</b>
-                                        <input type="text" placeholder="Text">
+                                        <input type="text" placeholder="Text" id="text-to-image">
                                     </label>
                                 </div>
                                 <!------ Checkboxes starts here -------->

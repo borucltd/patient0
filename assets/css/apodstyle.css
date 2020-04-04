@@ -84,6 +84,13 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
+    display: none;
+}
+
+canvas {
+    max-height: 450px;
+    max-width: 400px;
+    color: red;
 }
 
 .reduce-div-width {
