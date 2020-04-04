@@ -114,3 +114,11 @@ canvas {
     text-align: center;
     z-index: 2;
 }
+
+
+/* class is needed to render busy cursos during ajax calls */
+body.wait *, body.wait
+{
+    /* important to overwrite any other potential cursos manipulations*/
+    cursor: wait !important;
+}
