@@ -6,11 +6,9 @@ $(document).ready(function () {
 
 //cursor change while ajax is being called
 $(document).ajaxStart(function() {
-    $(document.body).css({'cursor' : 'wait'});
+    $('body').addClass('wait'); 
 }).ajaxStop(function() {
-    $(document.body).css({'cursor' : 'default'});
-     
-
+    $('body').removeClass('wait'); 
 });
 
     var api_key = "2Xe0Yym5p1wnVlIvGnsLtH8aU4gfdgp12b1d75nR";
