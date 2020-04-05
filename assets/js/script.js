@@ -131,7 +131,7 @@ $(document).ajaxStart(function() {
             var testWidth = metrics.width;
             console.log(ctx.canvas.height)   
             if(testWidth > maxWidth && n > 0) {
-                ctx.fillText(line, ctx.canvas.width/2, (ctx.canvas.height) - yOffset + lineOffset);
+                ctx.fillText(line, ctx.canvas.width/2, (ctx.canvas.height) - 20 - yOffset + lineOffset);
                 console.log("it's past 80%")
                 line = words[n] + ' ';
                 lineOffset += 85;
@@ -140,7 +140,7 @@ $(document).ajaxStart(function() {
             }
         }
         numLines = lineOffset/85;
-        ctx.fillText(line, ctx.canvas.width/2, (ctx.canvas.height) - yOffset + lineOffset);
+        ctx.fillText(line, ctx.canvas.width/2, (ctx.canvas.height) - 20 - yOffset + lineOffset);
         ctx.textAlign = "center";
         
         }
