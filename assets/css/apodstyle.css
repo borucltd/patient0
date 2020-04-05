@@ -40,6 +40,32 @@ body {
     animation: glitch-effect 2s infinite;
 }
 
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 20%;
+    top: 0;
+    width: 60%; 
+    height: 100%;
+    z-index: 1;
+    padding-top: 350px;
+    overflow: auto;
+
+}
+.modal-content {
+    font-family: 'Do Hyeon', sans-serif;
+    color: white;
+    background-color: black;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+}
+
+
+
+
 @keyframes glitch-effect {
     0% {
         left: -2.5px;

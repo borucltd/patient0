@@ -15,7 +15,10 @@ $(document).ajaxStart(function() {
 
     //Use Moment.js to get the correct formatting for the ajax query.
     $("#button-generate").on("click", function() {
+        
+        $('#NASA')[0].style.display = "block";
         generateImage();
+        
     });
 
     $("#text-to-image").on("change keyup paste", function(){
@@ -51,7 +54,7 @@ $(document).ajaxStart(function() {
                 if (result.includes("apod.nasa.gov/apod/image") && result.includes("jpg") == true){
                     picture = $("#generated-image");                
                     picture.attr("src", result);
-                    imgToCanvas();              
+                    imgToCanvas();           
                 }
 
                 else {
@@ -81,6 +84,7 @@ $(document).ajaxStart(function() {
             $('#canvas-manipulation').children().last().remove();
             $('#canvas-manipulation').append(c);
             canvasSettings();
+           $('#NASA')[0].style.display = "none"; 
         };
         
     }
