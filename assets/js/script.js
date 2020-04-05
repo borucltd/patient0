@@ -1,8 +1,7 @@
 
 
 $(document).ready(function () {
-    //testing
-    imgToCanvas();
+    var numLines = 0;
 
 //cursor change while ajax is being called
 $(document).ajaxStart(function() {
@@ -102,10 +101,11 @@ $(document).ajaxStart(function() {
     function addTextToCanvas() {
         var lengthOfText
         var lengthOfCanvas
-        var heightRatio = 1.39
+        var lineOffset = 0;
         var textVal = $("#text-to-image").val();
         var words = textVal.split(' ')
         var line = [];
+        
 
         c = $('canvas')[0];
         var ctx = c.getContext("2d");
@@ -117,23 +117,25 @@ $(document).ajaxStart(function() {
         ctx.drawImage(img1, 0, 0);
         lengthOfText = (ctx.measureText(textVal)).width;
         lengthOfCanvas = (ctx.canvas.width);
-        var maxWidth = (ctx.canvas.width)*0.8;
+        var maxWidth = (ctx.canvas.width)*0.90;
 
+        var yOffset = (numLines+1)*85;
         for(var n = 0; n < words.length; n++) {
             var testLine = line + words[n] + ' ';
             var metrics = ctx.measureText(testLine); 
             var testWidth = metrics.width;
-            console.log(testWidth)    
+            console.log(ctx.canvas.height)   
             if(testWidth > maxWidth && n > 0) {
-                ctx.fillText(line, ctx.canvas.width/2, ctx.canvas.height/heightRatio);
+                ctx.fillText(line, ctx.canvas.width/2, (ctx.canvas.height) - yOffset + lineOffset);
                 console.log("it's past 80%")
                 line = words[n] + ' ';
-                heightRatio -= 0.12
+                lineOffset += 85;
             } else {
                 line = testLine
             }
         }
-        ctx.fillText(line, ctx.canvas.width/2, ctx.canvas.height/heightRatio);
+        numLines = lineOffset/85;
+        ctx.fillText(line, ctx.canvas.width/2, (ctx.canvas.height) - yOffset + lineOffset);
         ctx.textAlign = "center";
         
         }

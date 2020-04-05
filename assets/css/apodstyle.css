@@ -3,6 +3,7 @@ body {
     background: #1F1C72;
     overflow-x: hidden;
     min-height: 101vh;
+    background: url('../img/space-background.jpg');
 }
 
 .outer-nav {
@@ -97,9 +98,6 @@ b {
 
 }
 
-.background-img {
-    background-image: url("../img/space-background.jpg");
-}
 
 img {
     max-height: 400px;
