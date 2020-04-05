@@ -99,6 +99,7 @@ $(document).ajaxStart(function() {
         var lengthOfText
         var lengthOfCanvas
         var heightRatio = 1.39
+        var yOffset = 0;
         var textVal = $("#text-to-image").val();
         var words = textVal.split(' ')
         var line = [];
@@ -113,23 +114,24 @@ $(document).ajaxStart(function() {
         ctx.drawImage(img1, 0, 0);
         lengthOfText = (ctx.measureText(textVal)).width;
         lengthOfCanvas = (ctx.canvas.width);
-        var maxWidth = (ctx.canvas.width)*0.8;
+        var maxWidth = (ctx.canvas.width)*0.85;
 
+        
         for(var n = 0; n < words.length; n++) {
             var testLine = line + words[n] + ' ';
             var metrics = ctx.measureText(testLine); 
             var testWidth = metrics.width;
-            console.log(testWidth)    
+            console.log(testWidth)   
             if(testWidth > maxWidth && n > 0) {
-                ctx.fillText(line, ctx.canvas.width/2, ctx.canvas.height/heightRatio);
+                ctx.fillText(line, ctx.canvas.width/2, (ctx.canvas.height/heightRatio) + yOffset);
                 console.log("it's past 80%")
                 line = words[n] + ' ';
-                heightRatio -= 0.12
+                yOffset += 80;
             } else {
                 line = testLine
             }
         }
-        ctx.fillText(line, ctx.canvas.width/2, ctx.canvas.height/heightRatio);
+        ctx.fillText(line, ctx.canvas.width/2, (ctx.canvas.height/heightRatio) + yOffset);
         ctx.textAlign = "center";
         
         }
