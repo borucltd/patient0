@@ -49,7 +49,7 @@ body {
     width: 60%; 
     height: 100%;
     z-index: 1;
-    padding-top: 350px;
+    padding-top: 0px;
     overflow: auto;
 
 }
@@ -58,11 +58,15 @@ body {
     color: white;
     background-color: black;
     margin: auto;
-    padding: 20px;
+    padding: 35px;
+    padding-left:100;
     border: 1px solid #888;
     width: 70%;
 }
-
+#scroll-text {
+    padding-left:70%;
+    
+}
 
 
 

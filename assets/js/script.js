@@ -17,6 +17,8 @@ $(document).ajaxStart(function() {
     $("#button-generate").on("click", function() {
         
         $('#NASA')[0].style.display = "block";
+        $('#NASA').animate({"padding-top":"350px"});
+        $('#scroll-text').animate({"padding-left":"0%"},2000);
         generateImage();
         
     });
@@ -84,7 +86,10 @@ $(document).ajaxStart(function() {
             $('#canvas-manipulation').children().last().remove();
             $('#canvas-manipulation').append(c);
             canvasSettings();
-           $('#NASA')[0].style.display = "none"; 
+            $('#NASA').css("display" , "none");
+            $('#NASA').css("padding-top","0px");
+            $('#scroll-text').css("padding-left","70%");
+
         };
         
     }
