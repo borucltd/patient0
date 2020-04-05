@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     // Slack variables
     const urlSlack = 'https://slack.com/api/chat.postMessage';
-    //const tokenSlack = 'SECRET';
+    const tokenSlack = 'xoxb-895731779237-1034747577094-WFJIJrDlvt9artMrueSyozrV';
     const channelSlack = 'nbmc_slacks';
     let messageSlack = 'Hey this is a test message.';
     let userSlack = localStorage.getItem('firstName');
@@ -28,7 +28,16 @@ $(document).ready(function () {
    
     
        event.preventDefault();
-   
+
+       // if there is no image, then we can't send anything
+
+       if ( $('#generated-image').attr('src') === "" ) {
+        $('#slackmodalmessage').text("Pleae generate the image first.. [click me]");
+        $('#slackmodal')[0].style.display = "block";
+       } else {     
+           
+        $('#slackmodalmessage').text("Sending to slack...");
+        $('#slackmodal')[0].style.display = "block";
        // pick up fresh data from DOM
        imageSlackUrl=$("#generated-image").attr('src');
        //imageSlackUrl = "file:///./assets/img/space-background.jpg";
@@ -36,11 +45,7 @@ $(document).ready(function () {
            messageSlack="From " + userSlack +"(" + emailSlack + ")";
        } else {
            messageSlack="From " + userSlack +"(" + emailSlack + ")" + $("#messageSlack").val();
-       }
-
-       
-   
-    
+       }  
    
        // make a POST call to slack
        // this will be message and a photo
@@ -67,7 +72,17 @@ $(document).ready(function () {
             },
    
         });
+        $('#slackmodal')[0].style.display = "none";
+    }
     };
+
+    // when modal is clicked, hide it
+    $('#slackmodalmessage').on("click", function() {
+
+        event.preventDefault();
+        $('#slackmodal')[0].style.display = "none";
+
+    })
    
    });
    
