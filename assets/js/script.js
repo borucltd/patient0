@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
     var numLines = 0;
-
+    var workingImage;
 //cursor change while ajax is being called
 $(document).ajaxStart(function() {
     $('body').addClass('wait'); 
@@ -24,7 +24,7 @@ $(document).ajaxStart(function() {
     });
 
     $("#text-to-image").on("change keyup paste", function(){
-        addTextToCanvas();
+        addTextToCanvas(workingImage);
         // c = $('canvas')[0]
         // var ctx = c.getContext("2d");
         // var img1 = new Image ();
@@ -78,7 +78,8 @@ $(document).ajaxStart(function() {
         ctx = c.getContext('2d');
         var img1 = new Image ();
         //Testing
-        img1.src = document.getElementById("generated-image").src
+        img1.src = document.getElementById("generated-image").src;
+        img1.crossOrigin="anonymous" ;
         img1.onload = function () {
             c.width = img1.width;
             c.height = img1.height;
@@ -91,6 +92,9 @@ $(document).ajaxStart(function() {
             $('#scroll-text').css("padding-left","70%");
 
         };
+        workingImage = img1;
+        image = $('canvas')[0].toDataURL("image/png");
+        console.log(image);
         
     }
 
@@ -103,7 +107,7 @@ $(document).ajaxStart(function() {
 
     }
 
-    function addTextToCanvas() {
+    function addTextToCanvas(working_image) {
         var lengthOfText
         var lengthOfCanvas
         var lineOffset = 0;
@@ -115,8 +119,9 @@ $(document).ajaxStart(function() {
         c = $('canvas')[0];
         var ctx = c.getContext("2d");
         //ctx.fillRect(0, 0, document.getElementById("generated-image").width, document.getElementById("generated-image").height);
-        var img1 = new Image ();
+        var img1 = working_image;
         img1.src = document.getElementById("generated-image").src;
+        img1.crossOrigin="anonymous" ;
         img1.onload = function() {
             ctx.textBaseline = "top";
         ctx.drawImage(img1, 0, 0);

@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     // Slack variables
     const urlSlack = 'https://slack.com/api/chat.postMessage';
-    const tokenSlack = 'SECRET';
+    const tokenSlack = 'xoxb-895731779237-1034747577094-iucuAw9pjRnp97U4czKWAQGz';
     const channelSlack = 'nbmc_slacks';
     let messageSlack = 'Hey this is a test message.';
     let userSlack = localStorage.getItem('firstName');
@@ -25,6 +25,8 @@ $(document).ready(function () {
     
     // Functions
     function fslackme() {
+
+        
    
     
        event.preventDefault();
