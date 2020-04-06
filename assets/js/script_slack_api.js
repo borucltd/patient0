@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     // Slack variables
     const urlSlack = 'https://slack.com/api/chat.postMessage';
-    const tokenSlack = 'xoxb-895731779237-1034747577094-WFJIJrDlvt9artMrueSyozrV';
+    const tokenSlack = 'SECRET';
     const channelSlack = 'nbmc_slacks';
     let messageSlack = 'Hey this is a test message.';
     let userSlack = localStorage.getItem('firstName');
@@ -32,12 +32,21 @@ $(document).ready(function () {
        // if there is no image, then we can't send anything
 
        if ( $('#generated-image').attr('src') === "" ) {
+        
+        // info modal
+        $('#slackmodal')[0].style.display = "block";
         $('#slackmodalmessage').text("Pleae generate the image first.. [click me]");
-        $('#slackmodal')[0].style.display = "block";
+        $('#slackmodal').animate({"padding-top":"350px"});
+        $('#slackmodal').animate({"padding-left":"0%"},2000);
+       
        } else {     
-           
-        $('#slackmodalmessage').text("Sending to slack...");
+        
+        // info modal
         $('#slackmodal')[0].style.display = "block";
+        $('#slackmodalmessage').text("Sending to slack...");
+        $('#slackmodal').animate({"padding-top":"350px"});
+        $('#slackmodal').animate({"padding-left":"0%"},2000);
+       
        // pick up fresh data from DOM
        imageSlackUrl=$("#generated-image").attr('src');
        //imageSlackUrl = "file:///./assets/img/space-background.jpg";

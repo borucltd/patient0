@@ -164,7 +164,7 @@ section .wave:after {
   content: '';
   width: 100%;
   height: 143px;
-  background: url(wave.png);
+  background: url('../img/wave.png');
   position: absolute;
   top: 0;
   left: 0;
