@@ -53,9 +53,9 @@ $(document).ajaxStart(function() {
     function generateImage() {
         $.ajax({
                 url: newURL(),
-                method: "GET"
-            })
-            .then(function (response) {
+                method: "GET",
+            
+            success: function(response){
 
                 var result = response.url; 
                 console.log(result);
@@ -71,8 +71,21 @@ $(document).ajaxStart(function() {
                     console.log("This is not an image");
                     generateImage()
                 }            
-            });  
+            },
+            error: function(response){
+                console.log("ERROR with NASA API call");
+                resetNasaAnimation();
+                
+            },
+
+        }) 
     }
+
+
+
+
+
+
 
     function newURL() {
         var date = moment(randomDate(new Date(2012, 0, 1), new Date())).format("YYYY-MM-DD");
