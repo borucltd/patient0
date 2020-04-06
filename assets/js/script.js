@@ -19,19 +19,15 @@ $(document).ajaxStart(function() {
         $('#NASA')[0].style.display = "block";
         $('#NASA').animate({"padding-top":"350px"});
         $('#scroll-text').animate({"padding-left":"0%"},2000);
-        generateImage();
-        
+        generateImage();       
     });
 
     $("#text-to-image").on("change keyup paste", function(){
         addTextToCanvas();
-        // c = $('canvas')[0]
-        // var ctx = c.getContext("2d");
-        // var img1 = new Image ();
-        // img1.src = document.getElementById("generated-image").src
-        // ctx.drawImage(img1, 0, 0);
-        // ctx.fillText($("#text-to-image").val(), 10, 50);
     })
+
+    $("#radioGreyscale").on("click", greyscaleOn);
+    $("#radioDefault").on("click", greyscaleOff);
 
     //Function to return a random date.
     function randomDate(start, end) {
@@ -90,8 +86,12 @@ $(document).ajaxStart(function() {
             $('#NASA').css("padding-top","0px");
             $('#scroll-text').css("padding-left","70%");
 
-        };
-        
+            if ($("#radioGreyscale")[0].checked === true) {
+                greyscaleOn();
+            } else {
+                greyscaleOff();
+            }
+        }
     }
 
     function canvasSettings() {
@@ -99,8 +99,15 @@ $(document).ajaxStart(function() {
         var ctx = c.getContext("2d");
         ctx.font = "5em Arial";
         ctx.fillStyle = "white";
-        //console.log(ctx)
 
+    }
+
+    function greyscaleOn() {
+        $("canvas").css('filter', 'grayscale(100%)')
+    }
+
+    function greyscaleOff() {
+        $("canvas").css('filter', 'none')
     }
 
     function addTextToCanvas() {
