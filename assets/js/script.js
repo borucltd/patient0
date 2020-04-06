@@ -86,7 +86,6 @@ $(document).ajaxStart(function() {
         ctx = c.getContext('2d');
         var img1 = new Image ();
         //Testing
-        img1.setAttribute('crossorigin', 'anonymous')
         img1.src = document.getElementById("generated-image").src
         img1.onload = function () {
             c.width = img1.width;
