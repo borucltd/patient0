@@ -35,7 +35,7 @@ $(document).ready(function () {
         
         // info modal
         $('#slackmodal')[0].style.display = "block";
-        $('#slackmodalmessage').text("Pleae generate the image first.. [click me]");
+        $('#slackmodalmessage').text("Please generate the image first.. [click me]");
         $('#slackmodal').animate({"padding-top":"350px"});
         $('#slackmodal').animate({"padding-left":"0%"},2000);
        
