@@ -23,10 +23,14 @@ You just need a web browser. The project was tested on:
 
 ### Example
 
-![intro]('./assets/img/intro.PNG')
-![generate]('./assets/img/generate.PNG')
-![send]('./assets/img/send.PNG')
-![slacked]('./assets/img/slacked.PNG')
+* login page
+![intro](./assets/img/intro.PNG)
+* generate image
+![generate](./assets/img/generate.PNG)
+* generated image
+![send](./assets/img/send.PNG)
+* message and image on slack
+![slacked](./assets/img/slacked.PNG)
 
 ### Built with
 
