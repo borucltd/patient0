@@ -12,13 +12,25 @@ $(document).ajaxStart(function() {
 
     var api_key = "2Xe0Yym5p1wnVlIvGnsLtH8aU4gfdgp12b1d75nR";
 
-
-    //Use Moment.js to get the correct formatting for the ajax query.
-    $("#button-generate").on("click", function() {
-        
+    //functions for animation effects
+    function nasaAnimation(){
         $('#NASA')[0].style.display = "block";
         $('#NASA').animate({"padding-top":"350px"});
         $('#scroll-text').animate({"padding-left":"0%"},2000);
+
+    }
+
+    function resetNasaAnimation(){
+        $('#NASA').css("display" , "none");
+        $('#NASA').css("padding-top","0px");
+        $('#scroll-text').css("padding-left","70%");
+
+    }
+
+
+    //Use Moment.js to get the correct formatting for the ajax query.
+    $("#button-generate").on("click", function() {
+        nasaAnimation();
         generateImage();       
     });
 
@@ -82,10 +94,7 @@ $(document).ajaxStart(function() {
             $('#canvas-manipulation').children().last().remove();
             $('#canvas-manipulation').append(c);
             canvasSettings();
-            $('#NASA').css("display" , "none");
-            $('#NASA').css("padding-top","0px");
-            $('#scroll-text').css("padding-left","70%");
-
+            resetNasaAnimation();
             if ($("#radioGreyscale")[0].checked === true) {
                 greyscaleOn();
             } else {
